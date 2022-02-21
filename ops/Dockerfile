@@ -9,5 +9,5 @@ RUN  rm -Rf /var/lib/apt/lists/* && apt-get update && \
 COPY . .
 CMD python3 manage.py migrate --settings config.prod && \
     uwsgi -d --ini uwsgi.ini && \
-    nohup & celery -A tasks.celery_instance worker -l info && \
-    nohup & celery -A tasks.celery_instance beat -l info
+    nohup & celery -A applications.tasks.celery_instance worker -l info && \
+    nohup & celery -A applications.tasks.celery_instance beat -l info
