@@ -30,7 +30,7 @@ LOGGING = {
         'errMsg': {
             'level': 'ERROR',
             'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': os.path.join(BASE_DIR + '/logs/', 'errLog.log'),
+            'filename': os.path.join(BASE_DIR, 'logs', 'errLog.log'),
             'when': 'D',  # this specifies the interval
             'interval': 1,  # defaults to 1, only necessary for other values
             'backupCount': 0,  # how many backup file to keep, 10 days
