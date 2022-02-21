@@ -1,7 +1,6 @@
 import os
 from .settings import *
 
-ENV_DEV = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',

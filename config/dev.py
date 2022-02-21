@@ -3,7 +3,6 @@ import os
 from .settings import *
 
 # python manage.py migrate --settings=config.dev
-ENV_DEV = True
 DEBUG = True
 # log sql
 LOGGING = {
