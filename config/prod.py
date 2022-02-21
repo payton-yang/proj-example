@@ -8,7 +8,7 @@ DATABASES = {
         'NAME': 'snapp',
         'USER': 'postgres',
         'PASSWORD': 'U2RN82C46KD!',
-        'HOST': 'postgres',
+        'HOST': 'db',
         'PORT': 5432
     }
 }
