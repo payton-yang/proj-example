@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN  rm -Rf /var/lib/apt/lists/* && apt-get update && \
-     pip3 config set global.index-url https://pypi.douban.com/simple/ && pip3 install --no-cache-dir -r requirements.txt
+     pip3 install --no-cache-dir -r requirements.txt
 COPY . .
 CMD python3 manage.py migrate --settings config.prod && \
     uwsgi -d --ini uwsgi.ini && \

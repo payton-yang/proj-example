@@ -7,7 +7,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'snapp',
         'USER': 'postgres',
-        'PASSWORD': 'password',
+        'PASSWORD': 'U2RN82C46KD!',
         'HOST': 'postgres',
         'PORT': 5432
     }

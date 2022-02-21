@@ -1,1 +1,1 @@
-CREATE DATABASE "snapp_service";
+CREATE DATABASE "snapp";
