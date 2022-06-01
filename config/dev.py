@@ -46,7 +46,7 @@ LOGGING = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'snapp',
+        'NAME': 'test',
         'USER': 'postgres',
         'PASSWORD': 'password',
         'HOST': 'localhost',
@@ -54,3 +54,15 @@ DATABASES = {
     }
 }
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+REDIS_SERVER = '127.0.0.1'
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://" + REDIS_SERVER + ":6379/0",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "PASSWORD": ""
+        }
+    }
+}

@@ -50,7 +50,7 @@ services:
       - db
     build:
       context: ../
-      dockerfile: ops/Dockerfile
+      dockerfile: ""
     restart: always
 
 

@@ -13,5 +13,9 @@ class BaseModel(models.Model):
     format_updated_at = models.DateTimeField(
         verbose_name="格式化修改时间", auto_now_add=True)
 
+    def save(self, *args, **kwargs):
+        self.updated_at = int(time.time())
+        super().save(*args, **kwargs)
+
     class Meta:
         abstract = True

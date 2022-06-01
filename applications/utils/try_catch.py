@@ -1,5 +1,6 @@
 import logging
 import traceback
+import types
 from functools import wraps
 
 from rest_framework.response import Response
@@ -14,10 +15,10 @@ class CatchException:
     def __init__(self, func):
         wraps(func)(self)
 
-    def __call__(self, request, *args, **kwargs):
+    def __call__(self, *args, **kwargs):
 
         try:
-            return self.__wrapped__(self, request, *args, **kwargs)
+            return self.__wrapped__(*args, **kwargs)
         except Exception as e:
             logger.error(f'{traceback.format_exc()}')
 
@@ -26,3 +27,9 @@ class CatchException:
                 message=ERR_MAP_HTTP[HTTP.HTTP_500_INTERNAL_SERVER_ERROR]
             ))
         return resp
+
+    def __get__(self, instance, cls):
+        if instance is None:
+            return self
+        else:
+            return types.MethodType(self, instance)

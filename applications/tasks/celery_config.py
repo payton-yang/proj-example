@@ -36,7 +36,7 @@ CELERY_ROUTES = (
     },
 )
 
-# 定时任务
+# cron task
 CELERYBEAT_SCHEDULE = {
     "test_cron": {
         "task": "test_cron",  # 建议填写task的name, 这样就不用填写路径和考虑路径带来的问题了 注意name不能重复
